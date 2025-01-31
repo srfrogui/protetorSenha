@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 50px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .hidden {
+            color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center;">Lista de Usuários</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Senha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alexandre</td>
+                <td>11967286447</td>
+                <td class="hidden" id="senha1">123456</td>
+            </tr>
+            <tr>
+                <td>Cintia</td>
+                <td>11967285547</td>
+                <td class="hidden" id="senha2">778899</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center;">
+        <button onclick="mostrarSenhas()">Desbloquear Senha</button>
+    </div>
+
+    <script>
+        function mostrarSenhas() {
+            var senhaCorreta = "banana";
+            var senhaUsuario = prompt("Digite a senha para desbloquear:");
+            
+            if (senhaUsuario === senhaCorreta) {
+                document.getElementById("senha1").classList.remove("hidden");
+                document.getElementById("senha2").classList.remove("hidden");
+                alert("Senhas desbloqueadas!");
+            } else {
+                alert("Senha incorreta! Tente novamente.");
+            }
+        }
+    </script>
+
+</body>
+</html>
